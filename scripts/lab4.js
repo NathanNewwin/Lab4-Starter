@@ -8,13 +8,15 @@
 function sumValues(num1, num2, add) {
     if (add) {
         let result = 0;
-
+        if(isNaN(num1)|| isNaN(num2)){
+            return false;
+        }
         result = num1 + num2;
 
         return result;
     }
     else {
-        return !add;
+        return false;
     }
 }
 
@@ -27,7 +29,7 @@ function sumValues(num1, num2, add) {
 function discountPrices(prices, discount) {
     const discounted = []
     const length = prices.length;
-    if(length === 0){
+    if(length === 0 || Array.isArray(prices)){
         return false;
     }
     for(let i = 0; i < length; i++) {
